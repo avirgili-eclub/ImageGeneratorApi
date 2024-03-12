@@ -1,6 +1,37 @@
-bin/
-obj/
-/packages/
 riderModule.iml
 /_ReSharper.Caches/
-.idea/.idea.ImageGeneratorApi/.idea/sonarlint
+
+# Rider
+.idea/
+sonarlint/
+
+# Visual Studio Code
+.vscode/
+
+# Archivos binarios generados
+bin/
+obj/
+
+# Archivos de compilación
+*.dll
+*.exe
+*.pdb
+
+# Archivos de salida de compilación
+*.class
+*.jar
+
+# Archivos de configuración de Rider
+*.iml
+*.ipr
+*.iws
+
+# Archivos de respaldo y temporales
+*~
+*.swp
+._*
+.DS_Store
+
+# Dependencias y paquetes de NuGet
+packages/
+*.nupkg
