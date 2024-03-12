@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageGeneratorApi", "ImageGeneratorApi\ImageGeneratorApi.csproj", "{9B84844F-0DA8-41EA-920B-9169C384DA23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageGeneratorApi.Core", "ImageGeneratorApi.Core\ImageGeneratorApi.Core.csproj", "{E10019E8-3ED1-47A9-A223-29581B6424B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageGeneratorApi.Infrastructure", "ImageGeneratorApi.Infrastructure\ImageGeneratorApi.Infrastructure.csproj", "{B05D2623-8822-4E25-8079-1D247F04D468}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageGeneratorApi.Domain", "ImageGeneratorApi.Domain\ImageGeneratorApi.Domain.csproj", "{95E77BEE-F3B7-4085-85BA-BA3D8565E294}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageGeneratorApi.Test", "ImageGeneratorApi.Test\ImageGeneratorApi.Test.csproj", "{086616EA-8120-4922-89D5-D73FFDF7C3AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9B84844F-0DA8-41EA-920B-9169C384DA23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B84844F-0DA8-41EA-920B-9169C384DA23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B84844F-0DA8-41EA-920B-9169C384DA23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B84844F-0DA8-41EA-920B-9169C384DA23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E10019E8-3ED1-47A9-A223-29581B6424B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E10019E8-3ED1-47A9-A223-29581B6424B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E10019E8-3ED1-47A9-A223-29581B6424B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E10019E8-3ED1-47A9-A223-29581B6424B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B05D2623-8822-4E25-8079-1D247F04D468}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B05D2623-8822-4E25-8079-1D247F04D468}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B05D2623-8822-4E25-8079-1D247F04D468}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B05D2623-8822-4E25-8079-1D247F04D468}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95E77BEE-F3B7-4085-85BA-BA3D8565E294}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95E77BEE-F3B7-4085-85BA-BA3D8565E294}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95E77BEE-F3B7-4085-85BA-BA3D8565E294}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95E77BEE-F3B7-4085-85BA-BA3D8565E294}.Release|Any CPU.Build.0 = Release|Any CPU
+		{086616EA-8120-4922-89D5-D73FFDF7C3AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{086616EA-8120-4922-89D5-D73FFDF7C3AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{086616EA-8120-4922-89D5-D73FFDF7C3AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{086616EA-8120-4922-89D5-D73FFDF7C3AA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
