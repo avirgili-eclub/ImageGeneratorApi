@@ -1,7 +1,7 @@
 using System.Reflection;
 using AutoMapper;
 
-namespace ImageGeneratorApi.Core.Mappings;
+namespace ImageGeneratorApi.Core.Application.Mappings;
 
 public class MappingProfile : Profile
 {

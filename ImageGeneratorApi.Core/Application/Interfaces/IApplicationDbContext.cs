@@ -1,7 +1,7 @@
 using ImageGeneratorApi.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace ImageGeneratorApi.Core.Interfaces;
+namespace ImageGeneratorApi.Core.Application.Interfaces;
 
 public interface IApplicationDbContext
 {

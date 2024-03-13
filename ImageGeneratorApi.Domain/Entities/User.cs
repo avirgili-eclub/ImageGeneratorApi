@@ -1,17 +1,18 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using ImageGeneratorApi.Domain.Common;
+using Microsoft.AspNetCore.Identity;
 
 namespace ImageGeneratorApi.Domain.Entities;
 
-public class User : BaseEntity
+public class User : IdentityUser
 {
-    [Key]
-    public int UserId { get; set; }
-    public required string Username { get; set; }
-    public required string Password { get; set; }
-    public string? Role { get; set; }
-    public string? Token { get; set; }
-    public string? RefreshToken { get; set; }
-    public DateTime TokenExpires { get; set; }
+    public DateTime CreatedAt { get; set; }
+    public DateTime? UpdatedAt { get; set; }
+    public bool IsDeleted { get; set; }
+    public string? DeletedBy { get; set; }
+    public DateTime? DeletedAt { get; set; }
+    public string? UpdatedBy { get; set; }
+    public string? CreatedBy { get; set; }
     public ICollection<Project> Projects { get; } = new List<Project>();
 }

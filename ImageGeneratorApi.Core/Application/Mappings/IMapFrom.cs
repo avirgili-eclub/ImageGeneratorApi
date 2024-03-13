@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 
-namespace ImageGeneratorApi.Core.Mappings;
+namespace ImageGeneratorApi.Core.Application.Mappings;
 
 public interface IMapFrom<T>
 {

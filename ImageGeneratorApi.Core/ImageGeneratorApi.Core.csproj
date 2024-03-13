@@ -8,11 +8,23 @@
 
     <ItemGroup>
       <PackageReference Include="AutoMapper" Version="13.0.1" />
-      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.2" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.3" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.3" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\ImageGeneratorApi.Domain\ImageGeneratorApi.Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Image\Dto\" />
+      <Folder Include="Image\Interfaces\" />
+      <Folder Include="Image\Services\" />
+      <Folder Include="Login\Interfaces\" />
+      <Folder Include="Login\Services\" />
+      <Folder Include="Project\Dto\" />
+      <Folder Include="Project\Interfaces\" />
+      <Folder Include="Project\Services\" />
     </ItemGroup>
 
 </Project>

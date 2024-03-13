@@ -1,4 +1,4 @@
-namespace ImageGeneratorApi.Core.Interfaces;
+namespace ImageGeneratorApi.Core.Application.Interfaces;
 
 public interface IDateTime
 {

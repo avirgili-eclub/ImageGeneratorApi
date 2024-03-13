@@ -4,6 +4,7 @@ riderModule.iml
 # Rider
 .idea/
 sonarlint/
+Migrations/
 
 # Visual Studio Code
 .vscode/
@@ -35,3 +36,4 @@ obj/
 # Dependencias y paquetes de NuGet
 packages/
 *.nupkg
+Migrations/
