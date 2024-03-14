@@ -1,7 +1,5 @@
-using System.Security.Claims;
-using ImageGeneratorApi.Core.Application.Interfaces;
-using ImageGeneratorApi.Domain.Common;
 using ImageGeneratorApi.Domain.Entities;
+using ImageGeneratorApi.Infrastructure.Data.Interfaces;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
 

@@ -1,6 +1,6 @@
-using ImageGeneratorApi.Core.Application.Interfaces;
-using ImageGeneratorApi.Core.Application.Services;
 using ImageGeneratorApi.Domain.Entities;
+using ImageGeneratorApi.Infrastructure.Data.Interfaces;
+using ImageGeneratorApi.Infrastructure.Data.Services;
 using ImageGeneratorApi.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;

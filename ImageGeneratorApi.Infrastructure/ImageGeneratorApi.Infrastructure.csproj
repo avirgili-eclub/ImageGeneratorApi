@@ -9,13 +9,7 @@
     <ItemGroup>
       <Folder Include="Clients\" />
       <Folder Include="Data\Migrations\" />
-      <Folder Include="Data\Repository\" />
-      <Folder Include="Data\Services\" />
       <Folder Include="Middleware\" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\ImageGeneratorApi.Core\ImageGeneratorApi.Core.csproj" />
     </ItemGroup>
 
     <ItemGroup>
@@ -28,6 +22,10 @@
       <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.3" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="8.0.3" />
       <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ImageGeneratorApi.Domain\ImageGeneratorApi.Domain.csproj" />
     </ItemGroup>
 
 </Project>

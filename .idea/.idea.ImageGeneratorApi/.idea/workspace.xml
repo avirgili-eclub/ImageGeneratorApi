@@ -10,41 +10,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4335dec5-5fca-4a4a-a9e5-6aff2e2725b3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/Application/Interfaces/IDateTime.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/Application/Services/DateTimeService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/Login/Dto/UserLogin.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Infrastructure/Data/Migrations/20240313002825_InitialCreate.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Infrastructure/Data/Migrations/20240313002825_InitialCreate.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Infrastructure/Data/Migrations/20240313005251_UpdateUserIdAttribute.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Infrastructure/Data/Migrations/20240313005251_UpdateUserIdAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Infrastructure/Data/Migrations/20240313011031_FixMinorIssueRelationship.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Infrastructure/Data/Migrations/20240313011031_FixMinorIssueRelationship.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Infrastructure/Data/Migrations/20240313011323_RemoveUniqueUserIdAttr.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Infrastructure/Data/Migrations/20240313011323_RemoveUniqueUserIdAttr.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Infrastructure/Data/Migrations/ApplicationDbContextModelSnapshot.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Infrastructure/Persistence/IdentityDbSeed.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi/Controllers/LoginController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi/ImageGeneratorAI.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi/ImageGeneratorAI.db-shm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi/ImageGeneratorAI.db-wal" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/Image/Interfaces/ImageRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/Project/Repository/ProjectRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Common/Interfaces/IBaseRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Common/Interfaces/IBaseService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Interfaces/IImageRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Interfaces/IProjectRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Services/IProjectService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Infrastructure/Data/Interfaces/IApplicationDbContext.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Infrastructure/Data/Interfaces/IDateTime.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Infrastructure/Data/Repository/BaseRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Infrastructure/Data/Services/BaseService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Infrastructure/Data/Services/DateTimeService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ImageGeneratorApi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ImageGeneratorApi/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi.Core/Application/Interfaces/IApplicationDbContext.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi.Core/Application/Interfaces/IDateTime.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi.Core/Application/Services/DateTimeService.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageGeneratorApi.Core/ImageGeneratorApi.Core.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/ImageGeneratorApi.Core.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi.Core/Interfaces/IApplicationDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/Application/Interfaces/IApplicationDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi.Core/Interfaces/IDateTime.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi.Core/Mappings/IMapFrom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/Application/Mappings/IMapFrom.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi.Core/Mappings/MappingProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/Application/Mappings/MappingProfile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi.Core/Services/DateTimeService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Entities/Image.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Entities/Image.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Entities/Project.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Entities/Project.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Entities/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Entities/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi.Domain/ImageGeneratorApi.Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi.Domain/ImageGeneratorApi.Domain.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageGeneratorApi.Infrastructure/ImageGeneratorApi.Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi.Infrastructure/ImageGeneratorApi.Infrastructure.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageGeneratorApi.Infrastructure/Persistence/ApplicationDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi.Infrastructure/Persistence/ApplicationDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi.Infrastructure/Persistence/Seed.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi/ImageGeneratorApi.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi/ImageGeneratorApi.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi/ImageGeneratorAI.db" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi/ImageGeneratorAI.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi/ImageGeneratorAI.db-shm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi/ImageGeneratorAI.db-wal" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageGeneratorApi/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi/appsettings.Development.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +140,7 @@
       <option name="presentableId" value="Default" />
       <updated>1710208697050</updated>
       <workItem from="1710208698328" duration="6777000" />
-      <workItem from="1710277217031" duration="10947000" />
+      <workItem from="1710277217031" duration="16661000" />
     </task>
     <servers />
   </component>
