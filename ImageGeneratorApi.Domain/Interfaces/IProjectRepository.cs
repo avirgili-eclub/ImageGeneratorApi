@@ -5,5 +5,5 @@ namespace ImageGeneratorApi.Domain.Interfaces;
 
 public interface IProjectRepository : IBaseRepository<Project>
 {
-    
+    IQueryable<Project> GetAllByUser(string id);
 }

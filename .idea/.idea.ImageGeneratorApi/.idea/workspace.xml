@@ -10,29 +10,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4335dec5-5fca-4a4a-a9e5-6aff2e2725b3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/Image/Interfaces/ImageRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/Project/Repository/ProjectRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Common/Interfaces/IBaseRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Common/Interfaces/IBaseService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Interfaces/IImageRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Interfaces/IProjectRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Services/IProjectService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Infrastructure/Data/Interfaces/IApplicationDbContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Infrastructure/Data/Interfaces/IDateTime.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Infrastructure/Data/Repository/BaseRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Infrastructure/Data/Services/BaseService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Infrastructure/Data/Services/DateTimeService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/Project/Services/ProjectService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Dto/ImageDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Dto/ProjectDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Services/IImageService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi/Controllers/ProjectController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ImageGeneratorApi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ImageGeneratorApi/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi.Core/Application/Interfaces/IApplicationDbContext.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi.Core/Application/Interfaces/IDateTime.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi.Core/Application/Services/DateTimeService.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageGeneratorApi.Core/ImageGeneratorApi.Core.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/ImageGeneratorApi.Core.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi.Infrastructure/ImageGeneratorApi.Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi.Infrastructure/ImageGeneratorApi.Infrastructure.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi.Infrastructure/Persistence/ApplicationDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi.Infrastructure/Persistence/ApplicationDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi/ImageGeneratorAI.db" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi/ImageGeneratorAI.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi/ImageGeneratorAI.db-shm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi/ImageGeneratorAI.db-wal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi.Core/Project/Repository/ProjectRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/Project/Repository/ProjectRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Interfaces/IProjectRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Interfaces/IProjectRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Services/IProjectService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Services/IProjectService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi/ImageGeneratorApi.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi/ImageGeneratorApi.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +34,17 @@
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/88ec3bc3f37e76fbcc932a25f9f0c1c29fe2b343/src/Identity/Extensions.Core/src/UserManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/88ec3bc3f37e76fbcc932a25f9f0c1c29fe2b343/src/Identity/Extensions.Stores/src/IdentityUser.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9bab108b5efa4a968fdc6547ba34533f2b6b0/f3/2589c6e7/IUserStore`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ImageGeneratorApi.Core/Application/Mappings/MappingProfile.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ImageGeneratorApi.Core/Image/Interfaces/ImageRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ImageGeneratorApi.Core/Project/Repository/ProjectRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ImageGeneratorApi.Domain/Common/Interfaces/IBaseRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ImageGeneratorApi.Domain/Common/Interfaces/IBaseService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ImageGeneratorApi.Domain/Interfaces/IImageRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ImageGeneratorApi.Domain/Services/IProjectService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ImageGeneratorApi.Infrastructure/Data/Services/BaseService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ImageGeneratorApi/Controllers/LoginController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ImageGeneratorApi/Controllers/ProjectController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ImageGeneratorApi/Program.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -140,7 +139,7 @@
       <option name="presentableId" value="Default" />
       <updated>1710208697050</updated>
       <workItem from="1710208698328" duration="6777000" />
-      <workItem from="1710277217031" duration="16661000" />
+      <workItem from="1710277217031" duration="23238000" />
     </task>
     <servers />
   </component>
