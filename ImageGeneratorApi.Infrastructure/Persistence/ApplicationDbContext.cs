@@ -1,3 +1,5 @@
+using System.Security.Claims;
+using ImageGeneratorApi.Domain.Common;
 using ImageGeneratorApi.Domain.Entities;
 using ImageGeneratorApi.Infrastructure.Data.Interfaces;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -7,13 +9,20 @@ namespace ImageGeneratorApi.Infrastructure.Persistence;
 
 using Microsoft.EntityFrameworkCore;
 
-public class ApplicationDbContext(
-    DbContextOptions<ApplicationDbContext> options,
-    IDateTime dateTime,
-    //TODO: is deprecated
-    IHttpContextAccessor _httpContextAccessor)
-    : IdentityDbContext<User>(options), IApplicationDbContext
+public class ApplicationDbContext : IdentityDbContext<User>, IApplicationDbContext
 {
+    private readonly IDateTime _dateTime;
+    private readonly ICurrentUserService _currentUserService;
+
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options,
+        IDateTime dateTime,
+        //TODO: is deprecated
+        IHttpContextAccessor httpContextAccessor, ICurrentUserService currentUserService) : base(options)
+    {
+        _dateTime = dateTime;
+        _currentUserService = currentUserService;
+    }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
@@ -33,26 +42,31 @@ public class ApplicationDbContext(
     public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
     {
         //TODO: Fix this.
-        // var userId = _httpContextAccessor.HttpContext?.User?.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-        //
-        // foreach (var entry in ChangeTracker.Entries<BaseEntity>())
-        // {
-        //     switch (entry.State)
-        //     {
-        //         case EntityState.Added:
-        //             entry.Entity.CreatedBy = userId;
-        //             entry.Entity.CreatedAt = dateTime.Now;
-        //             entry.Entity.Id = Guid.NewGuid();
-        //             break;
-        //
-        //         case EntityState.Modified:
-        //             entry.Entity.UpdatedBy = userId;
-        //             entry.Entity.UpdatedAt = dateTime.Now;
-        //             // No modificar el ID
-        //             entry.Property(x => x.Id).IsModified = false;
-        //             break;
-        //     }
-        // }
+        
+        foreach (var entry in ChangeTracker.Entries<BaseEntity>())
+        {
+            switch (entry.State)
+            {
+                case EntityState.Added:
+                    entry.Entity.CreatedBy = _currentUserService?.UserName;
+                    entry.Entity.CreatedAt = _dateTime.Now;
+                    entry.Entity.Id = Guid.NewGuid();
+                    break;
+        
+                case EntityState.Modified:
+                    entry.Entity.UpdatedBy = _currentUserService?.UserName;
+                    entry.Entity.UpdatedAt = _dateTime.Now;
+                    // No modificar el ID
+                    entry.Property(x => x.Id).IsModified = false;
+                    break;
+                
+                case EntityState.Deleted:
+                    entry.Entity.DeletedBy = _currentUserService?.UserName;
+                    entry.Entity.DeletedAt = DateTime.Now;
+                    entry.Entity.IsDeleted = true;
+                    break;
+            }
+        }
 
         var result = 0;
 

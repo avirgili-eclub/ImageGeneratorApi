@@ -1,7 +1,9 @@
+using AutoMapper;
 using ImageGeneratorApi.Domain.Dto;
 using ImageGeneratorApi.Domain.Interfaces;
 using ImageGeneratorApi.Domain.Services;
 using ImageGeneratorApi.Infrastructure.Data.Services;
+using ImageGeneratorApi.Infrastructure.Persistence;
 using Microsoft.Extensions.Logging;
 
 namespace ImageGeneratorApi.Core.Project.Services;
@@ -10,11 +12,14 @@ public class ProjectService : BaseService<Domain.Entities.Project>, IProjectServ
 {
     private readonly IProjectRepository _projectRepository;
     private readonly ILogger<ProjectService> _logger;
+    private readonly IMapper _mapper;
 
-    public ProjectService(IProjectRepository projectRepository, ILogger<ProjectService> logger)
+    public ProjectService(IProjectRepository projectRepository, ILogger<ProjectService> logger, IMapper mapper, 
+        ApplicationDbContext applicationDbContext) : base(applicationDbContext)
     {
         _projectRepository = projectRepository;
         _logger = logger;
+        _mapper = mapper;
     }
 
     public List<Domain.Entities.Project> GetAllByUser(string id)
@@ -30,9 +35,14 @@ public class ProjectService : BaseService<Domain.Entities.Project>, IProjectServ
         }
     }
 
-    public Task CreateProjectAsync(ProjectDto projectRequest)
+    public async Task CreateProjectAsync(ProjectDto projectRequest)
     {
-        //TODO: implementar mapper para mapear DTO a Entity
-        throw new NotImplementedException();
+        Domain.Entities.Project project = _mapper.Map<Domain.Entities.Project>(projectRequest);
+        var result = await CreateAsync(project);
+        if (result == null)
+        {
+            //TODO: crear ProjectException
+            throw new Exception("Error occurred while creating project");
+        }
     }
 }

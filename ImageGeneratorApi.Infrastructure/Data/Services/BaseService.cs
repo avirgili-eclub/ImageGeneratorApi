@@ -1,41 +1,60 @@
 using ImageGeneratorApi.Domain.Common.Interfaces;
+using ImageGeneratorApi.Infrastructure.Data.Interfaces;
+using ImageGeneratorApi.Infrastructure.Persistence;
+using Microsoft.EntityFrameworkCore;
 
 namespace ImageGeneratorApi.Infrastructure.Data.Services;
 
-public class BaseService<T>: IBaseService<T> where T : class
+public class BaseService<T> : IBaseService<T> where T : class
 {
+    private readonly ApplicationDbContext _applicationDbContext;
+
+    public BaseService(ApplicationDbContext applicationDbContext)
+    {
+        _applicationDbContext = applicationDbContext ?? throw new ArgumentNullException(nameof(applicationDbContext));
+    }
+
     public IQueryable<T?> GetAll()
     {
-        throw new NotImplementedException();
+        return _applicationDbContext.Set<T>();
     }
 
-    public Task<IReadOnlyList<T>> GetAllAsync()
+    public async Task<IReadOnlyList<T>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        return await _applicationDbContext.Set<T>().ToListAsync();
     }
 
-    public Task<T?> GetByIdAsync(int id)
+    public async Task<T?> GetByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        return await _applicationDbContext.Set<T>().FindAsync(id);
     }
 
-    public Task<T> CreateAsync(T entity)
+    public async Task<T> CreateAsync(T entity)
     {
-        throw new NotImplementedException();
+        _applicationDbContext.Set<T>().Add(entity);
+        await _applicationDbContext.SaveChangesAsync();
+        return entity;
     }
 
-    public Task<T> UpdateAsync(T entity)
+    public async Task<T> UpdateAsync(T entity)
     {
-        throw new NotImplementedException();
+        _applicationDbContext.Set<T>().Update(entity);
+        await _applicationDbContext.SaveChangesAsync();
+        return entity;
     }
 
-    public Task DeleteByIdAsync(int id)
+    public async Task DeleteByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        var entity = await _applicationDbContext.Set<T>().FindAsync(id);
+        if (entity != null)
+        {
+            _applicationDbContext.Set<T>().Remove(entity);
+            await _applicationDbContext.SaveChangesAsync();
+        }
     }
 
-    public Task SaveChanges()
+    public async Task SaveChanges()
     {
-        throw new NotImplementedException();
+        await _applicationDbContext.SaveChangesAsync();
     }
 }

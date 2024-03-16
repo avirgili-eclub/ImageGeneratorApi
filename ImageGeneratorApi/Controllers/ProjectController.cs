@@ -1,5 +1,6 @@
 using ImageGeneratorApi.Domain.Dto;
 using ImageGeneratorApi.Domain.Services;
+using Microsoft.AspNetCore.Authorization;
 using Swashbuckle.AspNetCore.Annotations;
 using Microsoft.AspNetCore.Mvc;
 
@@ -22,24 +23,28 @@ public class ProjectController : ControllerBase
     [SwaggerResponse(500, "Internal Server Error", typeof(string))]
     public Task<IActionResult> GetAllByUser(string id)
     {
-        var response = _projectService.GetAllByUser(id).ToList();
+        var response = _projectService.GetAllByUser(id);
         return Task.FromResult<IActionResult>(Ok(response));
     }
     
-    [HttpPost]
+    [HttpPost("{userId}")]
     [SwaggerOperation(Summary = "Create User Project", Description = "Create Project.")]
     [SwaggerResponse(200, "Success")]
     [SwaggerResponse(400, "Bad Request", typeof(string))]
     [SwaggerResponse(500, "Internal Server Error", typeof(string))]
-    public async Task<IActionResult> Create([FromBody] ProjectDto projectRequest)
+    [Authorize]
+    public async Task<IActionResult> Create(string userId, [FromBody] ProjectDto projectRequest)
     {
-        if (projectRequest == null)
+        if (projectRequest == null || string.IsNullOrEmpty(projectRequest.Name) 
+                                   || string.IsNullOrEmpty(projectRequest.Description)
+                                   || string.IsNullOrEmpty(userId))
         {
             return BadRequest("Invalid project");
         }
 
         try
         {
+            projectRequest.UserId = userId;
             await _projectService.CreateProjectAsync(projectRequest);
             return Ok();
         }
