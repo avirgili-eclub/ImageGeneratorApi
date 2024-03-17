@@ -1,3 +1,5 @@
+using ImageGeneratorApi.Core.Image.Interfaces;
+using ImageGeneratorApi.Core.Image.Services;
 using ImageGeneratorApi.Core.Project.Repository;
 using ImageGeneratorApi.Core.Project.Services;
 using ImageGeneratorApi.Domain.Interfaces;
@@ -18,6 +20,8 @@ public static class ConfigureService
         services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         services.AddScoped<IProjectRepository, ProjectRepository>(); 
         services.AddScoped<IProjectService, ProjectService>();
+        services.AddScoped<IImageRepository, ImageRepository>();
+        services.AddScoped<IImageService, ImageService>();
         return services;
     }
 }

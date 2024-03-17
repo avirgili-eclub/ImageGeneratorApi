@@ -11,9 +11,9 @@ public class ImageDto
     public string? Description { get; set; }
     public int Width { get; set; }
     public int Height { get; set; }
-    [MaxLength(120)]
-    public string? Path { get; set; }
-    public int ProjectId { get; set; }
+    // [MaxLength(120)]
+    // public string? Path { get; set; }
+    // public int ProjectId { get; set; }
     [EnumDataType(typeof(ImageType))]
     public ImageType ImageType { get; set; }
 }

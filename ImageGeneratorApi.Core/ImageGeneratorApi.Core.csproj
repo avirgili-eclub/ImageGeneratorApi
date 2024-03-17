@@ -22,7 +22,6 @@
       <Folder Include="Application\Interfaces\" />
       <Folder Include="Application\Services\" />
       <Folder Include="Image\Dto\" />
-      <Folder Include="Image\Services\" />
       <Folder Include="Project\Dto\" />
     </ItemGroup>
 

@@ -35,9 +35,10 @@ public class ProjectService : BaseService<Domain.Entities.Project>, IProjectServ
         }
     }
 
-    public async Task CreateProjectAsync(ProjectDto projectRequest)
+    public async Task CreateProjectAsync(string userId, ProjectDto projectRequest)
     {
         Domain.Entities.Project project = _mapper.Map<Domain.Entities.Project>(projectRequest);
+        project.UserId = userId;
         var result = await CreateAsync(project);
         if (result == null)
         {

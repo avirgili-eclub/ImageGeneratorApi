@@ -7,5 +7,5 @@ namespace ImageGeneratorApi.Domain.Services;
 public interface IProjectService : IBaseService<Project>
 {
     List<Project> GetAllByUser(string id);
-    Task CreateProjectAsync(ProjectDto projectRequest);
+    Task CreateProjectAsync(string userId, ProjectDto projectRequest);
 }

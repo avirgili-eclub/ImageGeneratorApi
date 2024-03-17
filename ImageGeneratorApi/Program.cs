@@ -55,6 +55,7 @@ builder.Services.AddSwaggerGen(opt =>
     });
 });
 
+//TODO: obtain from a more secure place like Azure Key Vault or aws secret manager
 var secretKey = builder.Configuration["JwtSettings:SecretKey"];
 
 // Add authentication

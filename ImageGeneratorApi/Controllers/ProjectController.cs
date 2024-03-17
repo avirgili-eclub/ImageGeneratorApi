@@ -44,8 +44,7 @@ public class ProjectController : ControllerBase
 
         try
         {
-            projectRequest.UserId = userId;
-            await _projectService.CreateProjectAsync(projectRequest);
+            await _projectService.CreateProjectAsync(userId, projectRequest);
             return Ok();
         }
         catch (Exception e)

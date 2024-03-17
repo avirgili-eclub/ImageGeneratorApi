@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using ImageGeneratorApi.Domain.Common;
 using ImageGeneratorApi.Domain.Enums;
 
@@ -17,6 +18,7 @@ public class Image : BaseEntity
     [MaxLength(120)]
     public string? Path { get; set; }
     public int ProjectId { get; set; }
+    [ForeignKey("ProjectId")]
     public required Project Project { get; set; }
     [EnumDataType(typeof(ImageType))]
     public ImageType ImageType { get; set; }
