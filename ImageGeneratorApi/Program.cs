@@ -1,6 +1,7 @@
 using System.Text;
 using ImageGeneratorApi.Core;
-using ImageGeneratorApi.Domain.Entities;
+using ImageGeneratorApi.Domain.Common.Entities;
+using ImageGeneratorApi.Infrastructure.Clients;
 using ImageGeneratorApi.Infrastructure.Data.Interfaces;
 using ImageGeneratorApi.Infrastructure.Data.Services;
 using ImageGeneratorApi.Infrastructure.Persistence;
@@ -10,6 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Refit;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -101,6 +103,23 @@ builder.Services.AddIdentityCore<User>()
 
 builder.Services.AddTransient<IDateTime, DateTimeService>();
 builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
+builder.Services
+    .AddRefitClient<IStableDifussionClient>()
+    .ConfigureHttpClient(c => c.BaseAddress = new Uri("http://127.0.0.1:7860"));
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigins",
+        builder =>
+        {
+            builder.WithOrigins("http://127.0.0.1")
+                .AllowAnyHeader()
+                .AllowAnyMethod();
+        });
+});
+
+// Configure method in Startup.cs
+
 #endregion
 
 var app = builder.Build();
@@ -122,7 +141,7 @@ app.UseEndpoints(endpoints =>
     endpoints.MapControllers()/*.RequireAuthorization("BearerPolicy")*/;
 });
 app.UseHttpsRedirection();
-
+app.UseCors("AllowSpecificOrigins");
 // app.Use(async (_, next) =>
 // {
 //     var mvcOptions = app.Services.GetRequiredService<MvcOptions>();

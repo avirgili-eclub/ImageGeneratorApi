@@ -1,8 +1,10 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using ImageGeneratorApi.Domain.Common;
+using ImageGeneratorApi.Domain.Common.Entities;
+using ImageGeneratorApi.Domain.Images.Entities;
 
-namespace ImageGeneratorApi.Domain.Entities;
+namespace ImageGeneratorApi.Domain.Project.Entities;
 
 public class Project : BaseEntity
 {

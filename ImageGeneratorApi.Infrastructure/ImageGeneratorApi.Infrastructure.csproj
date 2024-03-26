@@ -7,7 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Clients\" />
       <Folder Include="Data\Migrations\" />
       <Folder Include="Middleware\" />
     </ItemGroup>
@@ -22,6 +21,7 @@
       <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.3" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="8.0.3" />
       <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+      <PackageReference Include="Refit" Version="7.0.0" />
     </ItemGroup>
 
     <ItemGroup>

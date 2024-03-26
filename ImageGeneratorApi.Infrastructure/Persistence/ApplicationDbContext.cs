@@ -1,6 +1,8 @@
 using System.Security.Claims;
 using ImageGeneratorApi.Domain.Common;
-using ImageGeneratorApi.Domain.Entities;
+using ImageGeneratorApi.Domain.Common.Entities;
+using ImageGeneratorApi.Domain.Images.Entities;
+using ImageGeneratorApi.Domain.Project.Entities;
 using ImageGeneratorApi.Infrastructure.Data.Interfaces;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
@@ -36,9 +38,14 @@ public class ApplicationDbContext : IdentityDbContext<User>, IApplicationDbConte
         base.OnModelCreating(modelBuilder);
     }
 
-    public DbSet<Project> Projects => Set<Project>();
-    public DbSet<Image> Images => Set<Image>();
+    public DbSet<Project> Projects { get; set; } 
+    public DbSet<Image> Images { get; set; }
 
+    public DbSet<T> Set<T>() where T : class
+    {
+        return Set<T>();
+    }
+    
     public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
     {
         //TODO: Fix this.

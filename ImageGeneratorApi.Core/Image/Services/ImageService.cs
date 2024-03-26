@@ -1,22 +1,22 @@
 using AutoMapper;
-using ImageGeneratorApi.Domain.Dto;
-using ImageGeneratorApi.Domain.Interfaces;
-using ImageGeneratorApi.Domain.Services;
+using ImageGeneratorApi.Domain.Images.Dto;
+using ImageGeneratorApi.Domain.Images.Repository;
+using ImageGeneratorApi.Domain.Images.Services;
+using ImageGeneratorApi.Infrastructure.Data.Interfaces;
 using ImageGeneratorApi.Infrastructure.Data.Services;
 using ImageGeneratorApi.Infrastructure.Persistence;
 using Microsoft.Extensions.Logging;
 
 namespace ImageGeneratorApi.Core.Image.Services;
 
-public class ImageService : BaseService<Domain.Entities.Image>, IImageService
+public class ImageService : BaseService<Domain.Images.Entities.Image>, IImageService
 {
-    
     private readonly IImageRepository _imageRepository;
     private readonly ILogger<ImageService> _logger;
     private readonly IMapper _mapper;
-    
-    public ImageService(ApplicationDbContext applicationDbContext, IImageRepository imageRepository, 
-        ILogger<ImageService> logger, IMapper mapper) : base(applicationDbContext)
+
+    public ImageService(IImageRepository imageRepository,
+        ILogger<ImageService> logger, IMapper mapper) : base(imageRepository)
     {
         _imageRepository = imageRepository;
         _logger = logger;
@@ -24,7 +24,7 @@ public class ImageService : BaseService<Domain.Entities.Image>, IImageService
     }
 
 
-    public List<Domain.Entities.Image> GetAllByProjectId(int id)
+    public List<Domain.Images.Entities.Image> GetAllByProjectId(int id)
     {
         try
         {
@@ -37,15 +37,35 @@ public class ImageService : BaseService<Domain.Entities.Image>, IImageService
         }
     }
 
-    public Domain.Entities.Image DtoToEntity(ImageDto imageRequest)
+    public Domain.Images.Entities.Image DtoToEntity(ImageDto imageRequest)
     {
         try
         {
-            return _mapper.Map<Domain.Entities.Image>(imageRequest);
+            return _mapper.Map<Domain.Images.Entities.Image>(imageRequest);
         }
         catch (Exception e)
         {
             _logger.LogError(e, "Error occurred while mapping image dto to entity");
+            throw;
+        }
+    }
+
+    public async Task CreateImages(ImageDto imageRequest, int projectId)
+    {
+        try
+        {
+            List<Domain.Images.Entities.Image> images = new();
+            for (int i = 0; i < imageRequest.Quantity; i++)
+            {
+                Domain.Images.Entities.Image entity = DtoToEntity(imageRequest);
+                entity.ProjectId = projectId;
+                images.Add(entity);
+            }
+            await _imageRepository.CreateRangeAsync(images);
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e, "Error occurred while creating images");
             throw;
         }
     }

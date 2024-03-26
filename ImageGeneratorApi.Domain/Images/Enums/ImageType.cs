@@ -1,4 +1,4 @@
-namespace ImageGeneratorApi.Domain.Enums;
+namespace ImageGeneratorApi.Domain.Images.Enums;
 
 public enum ImageType
 {

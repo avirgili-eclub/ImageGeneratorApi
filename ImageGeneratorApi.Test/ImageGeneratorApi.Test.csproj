@@ -17,4 +17,9 @@
         <PackageReference Include="coverlet.collector" Version="6.0.0"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\ImageGeneratorApi.Core\ImageGeneratorApi.Core.csproj" />
+      <ProjectReference Include="..\ImageGeneratorApi.Infrastructure\ImageGeneratorApi.Infrastructure.csproj" />
+    </ItemGroup>
+
 </Project>

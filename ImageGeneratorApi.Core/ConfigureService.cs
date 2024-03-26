@@ -2,8 +2,10 @@ using ImageGeneratorApi.Core.Image.Interfaces;
 using ImageGeneratorApi.Core.Image.Services;
 using ImageGeneratorApi.Core.Project.Repository;
 using ImageGeneratorApi.Core.Project.Services;
-using ImageGeneratorApi.Domain.Interfaces;
-using ImageGeneratorApi.Domain.Services;
+using ImageGeneratorApi.Domain.Images.Repository;
+using ImageGeneratorApi.Domain.Images.Services;
+using ImageGeneratorApi.Domain.Project.Repository;
+using ImageGeneratorApi.Domain.Project.Services;
 using ImageGeneratorApi.Infrastructure.Data.Interfaces;
 using ImageGeneratorApi.Infrastructure.Persistence;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,6 +24,7 @@ public static class ConfigureService
         services.AddScoped<IProjectService, ProjectService>();
         services.AddScoped<IImageRepository, ImageRepository>();
         services.AddScoped<IImageService, ImageService>();
+
         return services;
     }
 }

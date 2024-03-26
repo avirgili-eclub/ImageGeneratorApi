@@ -1,6 +1,6 @@
 namespace ImageGeneratorApi.Domain.Common.Interfaces;
 
-public interface IBaseService<T>
+public interface IBaseService<T> where T : BaseEntity
 {
     IQueryable<T?> GetAll();
     Task<IReadOnlyList<T>> GetAllAsync();

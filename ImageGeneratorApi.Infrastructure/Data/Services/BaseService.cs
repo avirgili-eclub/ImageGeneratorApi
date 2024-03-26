@@ -1,3 +1,4 @@
+using ImageGeneratorApi.Domain.Common;
 using ImageGeneratorApi.Domain.Common.Interfaces;
 using ImageGeneratorApi.Infrastructure.Data.Interfaces;
 using ImageGeneratorApi.Infrastructure.Persistence;
@@ -5,56 +6,47 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ImageGeneratorApi.Infrastructure.Data.Services;
 
-public class BaseService<T> : IBaseService<T> where T : class
+public class BaseService<T> : IBaseService<T> where T : BaseEntity
 {
-    private readonly ApplicationDbContext _applicationDbContext;
+    private readonly IBaseRepository<T> _repository;
 
-    public BaseService(ApplicationDbContext applicationDbContext)
+    public BaseService(IBaseRepository<T> repository)
     {
-        _applicationDbContext = applicationDbContext ?? throw new ArgumentNullException(nameof(applicationDbContext));
+        _repository = repository ?? throw new ArgumentNullException(nameof(repository));
     }
 
     public IQueryable<T?> GetAll()
     {
-        return _applicationDbContext.Set<T>();
+        return _repository.GetAll();
     }
 
     public async Task<IReadOnlyList<T>> GetAllAsync()
     {
-        return await _applicationDbContext.Set<T>().ToListAsync();
+        return await _repository.GetAllAsync();
     }
 
     public async Task<T?> GetByIdAsync(int id)
     {
-        return await _applicationDbContext.Set<T>().FindAsync(id);
+        return await _repository.GetByIdAsync(id);
     }
 
     public async Task<T> CreateAsync(T entity)
     {
-        _applicationDbContext.Set<T>().Add(entity);
-        await _applicationDbContext.SaveChangesAsync();
-        return entity;
+        return await _repository.CreateAsync(entity);
     }
 
     public async Task<T> UpdateAsync(T entity)
     {
-        _applicationDbContext.Set<T>().Update(entity);
-        await _applicationDbContext.SaveChangesAsync();
-        return entity;
+        return await _repository.UpdateAsync(entity);
     }
 
     public async Task DeleteByIdAsync(int id)
     {
-        var entity = await _applicationDbContext.Set<T>().FindAsync(id);
-        if (entity != null)
-        {
-            _applicationDbContext.Set<T>().Remove(entity);
-            await _applicationDbContext.SaveChangesAsync();
-        }
+        await _repository.DeleteByIdAsync(id);
     }
 
     public async Task SaveChanges()
     {
-        await _applicationDbContext.SaveChangesAsync();
+        await _repository.SaveChanges();
     }
 }

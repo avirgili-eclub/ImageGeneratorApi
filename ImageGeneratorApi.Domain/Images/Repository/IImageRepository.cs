@@ -1,7 +1,7 @@
 using ImageGeneratorApi.Domain.Common.Interfaces;
-using ImageGeneratorApi.Domain.Entities;
+using ImageGeneratorApi.Domain.Images.Entities;
 
-namespace ImageGeneratorApi.Domain.Interfaces;
+namespace ImageGeneratorApi.Domain.Images.Repository;
 
 public interface IImageRepository : IBaseRepository<Image>
 {

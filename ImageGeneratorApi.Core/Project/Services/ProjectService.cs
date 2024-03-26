@@ -1,28 +1,31 @@
 using AutoMapper;
-using ImageGeneratorApi.Domain.Dto;
-using ImageGeneratorApi.Domain.Interfaces;
-using ImageGeneratorApi.Domain.Services;
+using ImageGeneratorApi.Domain.Project.Dto;
+using ImageGeneratorApi.Domain.Project.Repository;
+using ImageGeneratorApi.Domain.Project.Services;
+using ImageGeneratorApi.Infrastructure.Clients;
 using ImageGeneratorApi.Infrastructure.Data.Services;
 using ImageGeneratorApi.Infrastructure.Persistence;
 using Microsoft.Extensions.Logging;
 
 namespace ImageGeneratorApi.Core.Project.Services;
 
-public class ProjectService : BaseService<Domain.Entities.Project>, IProjectService
+public class ProjectService : BaseService<Domain.Project.Entities.Project>, IProjectService
 {
     private readonly IProjectRepository _projectRepository;
     private readonly ILogger<ProjectService> _logger;
     private readonly IMapper _mapper;
+ 
 
-    public ProjectService(IProjectRepository projectRepository, ILogger<ProjectService> logger, IMapper mapper, 
-        ApplicationDbContext applicationDbContext) : base(applicationDbContext)
+    public ProjectService(IProjectRepository projectRepository, ILogger<ProjectService> logger, 
+        IMapper mapper) : base(projectRepository)
     {
         _projectRepository = projectRepository;
         _logger = logger;
         _mapper = mapper;
+ 
     }
 
-    public List<Domain.Entities.Project> GetAllByUser(string id)
+    public List<Domain.Project.Entities.Project> GetAllByUser(string id)
     {
         try
         {
@@ -37,7 +40,7 @@ public class ProjectService : BaseService<Domain.Entities.Project>, IProjectServ
 
     public async Task CreateProjectAsync(string userId, ProjectDto projectRequest)
     {
-        Domain.Entities.Project project = _mapper.Map<Domain.Entities.Project>(projectRequest);
+        Domain.Project.Entities.Project project = _mapper.Map<Domain.Project.Entities.Project>(projectRequest);
         project.UserId = userId;
         var result = await CreateAsync(project);
         if (result == null)

@@ -1,6 +1,6 @@
-using ImageGeneratorApi.Domain.Dto;
-using ImageGeneratorApi.Domain.Entities;
-using ImageGeneratorApi.Domain.Services;
+using ImageGeneratorApi.Domain.Images.Dto;
+using ImageGeneratorApi.Domain.Images.Entities;
+using ImageGeneratorApi.Domain.Images.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
@@ -23,7 +23,6 @@ public class ImageController : ControllerBase
     [SwaggerResponse(200, "Success", typeof(IEnumerable<Image>))]
     [SwaggerResponse(400, "Bad Request", typeof(string))]
     [SwaggerResponse(500, "Internal Server Error", typeof(string))]
-    [Authorize]
     public IActionResult GetAllByProjectId(int projectId)
     {
         var response = _imageService.GetAllByProjectId(projectId);
@@ -32,10 +31,9 @@ public class ImageController : ControllerBase
 
     [HttpPost("{projectId}")]
     [SwaggerOperation(Summary = "Create Image", Description = "Create Image.")]
-    [SwaggerResponse(200, "Success")]
+    [SwaggerResponse(200, "Success", typeof(IEnumerable<Image>))]
     [SwaggerResponse(400, "Bad Request", typeof(string))]
     [SwaggerResponse(500, "Internal Server Error", typeof(string))]
-    [Authorize]
     public IActionResult Create(int projectId, [FromBody] ImageDto imageRequest)
     {
         if (imageRequest == null || string.IsNullOrEmpty(imageRequest.Name)
@@ -48,10 +46,8 @@ public class ImageController : ControllerBase
 
         try
         {
-            Image image = _imageService.DtoToEntity(imageRequest);
-            image.ProjectId = projectId;
-            _imageService.CreateAsync(image);
-            return Ok();
+           var imageResponse = _imageService.CreateImages(imageRequest, projectId);
+           return Ok(imageResponse);
         }
         catch (Exception e)
         {

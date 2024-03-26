@@ -1,4 +1,4 @@
-using ImageGeneratorApi.Domain.Entities;
+using ImageGeneratorApi.Domain.Common.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 

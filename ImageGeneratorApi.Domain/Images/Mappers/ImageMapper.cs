@@ -1,8 +1,8 @@
 using AutoMapper;
-using ImageGeneratorApi.Domain.Dto;
-using ImageGeneratorApi.Domain.Entities;
+using ImageGeneratorApi.Domain.Images.Dto;
+using ImageGeneratorApi.Domain.Images.Entities;
 
-namespace ImageGeneratorApi.Domain.Mappers;
+namespace ImageGeneratorApi.Domain.Images.Mappers;
 
 public class ImageMapper : Profile
 {

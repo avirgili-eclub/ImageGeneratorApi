@@ -1,20 +1,17 @@
-using ImageGeneratorApi.Domain.Interfaces;
+using ImageGeneratorApi.Domain.Images.Repository;
 using ImageGeneratorApi.Infrastructure.Data.Interfaces;
 using ImageGeneratorApi.Infrastructure.Data.Repository;
 
 namespace ImageGeneratorApi.Core.Image.Interfaces;
 
-public class ImageRepository : BaseRepository<Domain.Entities.Image>, IImageRepository
+public class ImageRepository : BaseRepository<Domain.Images.Entities.Image>, IImageRepository
 {
-    private readonly IApplicationDbContext _context;
-
-    public ImageRepository(IApplicationDbContext context)
+    public ImageRepository(IApplicationDbContext context) : base(context)
     {
-        _context = context;
     }
-
-    public IQueryable<Domain.Entities.Image> GetAllByProjectId(int id)
+    
+    public IQueryable<Domain.Images.Entities.Image> GetAllByProjectId(int id)
     {
-        return _context.Images.Where(i => i.ProjectId == id);
+        return Context.Images.Where(image => image.ProjectId == id);
     }
 }

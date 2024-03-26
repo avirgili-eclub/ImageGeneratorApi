@@ -1,42 +1,68 @@
 using ImageGeneratorApi.Domain.Common;
 using ImageGeneratorApi.Domain.Common.Interfaces;
+using ImageGeneratorApi.Infrastructure.Data.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace ImageGeneratorApi.Infrastructure.Data.Repository;
 
 public class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity
 {
-    public IQueryable<T?> GetAll()
+    protected readonly IApplicationDbContext Context;
+
+    public BaseRepository(IApplicationDbContext context)
     {
-        throw new NotImplementedException();
+        Context = context ?? throw new ArgumentNullException(nameof(context));
     }
 
-    public Task<IReadOnlyList<T>> GetAllAsync()
+    public IQueryable<T> GetAll()
     {
-        throw new NotImplementedException();
+        return Context.Set<T>();
     }
 
-    public Task<T?> GetByIdAsync(int id)
+    public async Task<IReadOnlyList<T>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        return await Context.Set<T>().ToListAsync();
     }
 
-    public Task<T> CreateAsync(T entity)
+    public async Task<T> GetByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        var entity = await Context.Set<T>().FindAsync(id);
+        if (entity != null) return entity;
+        
+        //TODO: throw new EntityNotFoundException($"Entity with ID {id} not found.");
+        Console.Error.WriteLine($"Entity with ID {id} not found.");
+        throw new Exception($"Entity with ID {id} not found.");
     }
 
-    public Task<T> UpdateAsync(T entity)
+    public async Task<T> CreateAsync(T entity)
     {
-        throw new NotImplementedException();
+        await Context.Set<T>().AddAsync(entity);
+        await Context.SaveChangesAsync();
+        return entity;
     }
 
-    public Task DeleteByIdAsync(int id)
+    public async Task CreateRangeAsync(IEnumerable<T> entities, CancellationToken cancellationToken = default)
     {
-        throw new NotImplementedException();
+        await Context.Set<T>().AddRangeAsync(entities, cancellationToken);
+        await Context.SaveChangesAsync(cancellationToken);
     }
 
-    public Task SaveChanges()
+    public async Task<T> UpdateAsync(T entity)
     {
-        throw new NotImplementedException();
+        Context.Set<T>().Update(entity);
+        await Context.SaveChangesAsync();
+        return entity;
+    }
+
+    public async Task DeleteByIdAsync(int id)
+    {
+        var entity = await GetByIdAsync(id);
+        Context.Set<T>().Remove(entity);
+        await Context.SaveChangesAsync();
+    }
+
+    public async Task SaveChanges()
+    {
+        await Context.SaveChangesAsync();
     }
 }

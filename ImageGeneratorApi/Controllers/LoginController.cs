@@ -2,7 +2,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using ImageGeneratorApi.Core.Login.Dto;
-using ImageGeneratorApi.Domain.Entities;
+using ImageGeneratorApi.Domain.Common.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;

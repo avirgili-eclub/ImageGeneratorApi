@@ -1,6 +1,7 @@
 using System.ComponentModel.DataAnnotations;
+using ImageGeneratorApi.Domain.Images.Dto;
 
-namespace ImageGeneratorApi.Domain.Dto;
+namespace ImageGeneratorApi.Domain.Project.Dto;
 
 public class ProjectDto
 {
