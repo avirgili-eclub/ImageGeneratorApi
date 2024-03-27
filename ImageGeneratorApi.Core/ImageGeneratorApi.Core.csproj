@@ -7,10 +7,26 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="Autofocus" Version="6.0.0" />
+      <PackageReference Include="Autofocus.Extensions.AfterDetailer" Version="2.0.0" />
+      <PackageReference Include="Autofocus.ImageSharp" Version="2.0.0" />
+      <PackageReference Include="Autofocus.Outpaint" Version="2.0.0" />
+      <PackageReference Include="Autofocus.Scripts.UltimateUpscaler" Version="2.0.0" />
       <PackageReference Include="AutoMapper" Version="13.0.1" />
       <PackageReference Include="AutoMapper.Extensions.EnumMapping" Version="3.2.0" />
+      <PackageReference Include="Discord.Net.Core" Version="3.14.1" />
+      <PackageReference Include="Discord.Net.Interactions" Version="3.14.1" />
+      <PackageReference Include="Discord.Net.WebSocket" Version="3.14.1" />
+      <PackageReference Include="JetBrains.Annotations" Version="2023.3.0" />
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.3" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.3" />
+      <PackageReference Include="Microsoft.Recognizers.Text" Version="1.8.8" />
+      <PackageReference Include="Microsoft.Recognizers.Text.Choice" Version="1.8.8" />
+      <PackageReference Include="Microsoft.Recognizers.Text.DateTime" Version="1.8.8" />
+      <PackageReference Include="Microsoft.Recognizers.Text.NumberWithUnit" Version="1.8.8" />
+      <PackageReference Include="morelinq" Version="4.1.0" />
+      <PackageReference Include="SixLabors.ImageSharp" Version="3.1.2" />
+      <PackageReference Include="SixLabors.ImageSharp.Drawing" Version="2.1.1" />
     </ItemGroup>
 
     <ItemGroup>
@@ -23,6 +39,8 @@
       <Folder Include="Application\Services\" />
       <Folder Include="Image\Dto\" />
       <Folder Include="Project\Dto\" />
+      <Folder Include="StableDiffusion\Anime\" />
+      <Folder Include="StableDiffusion\Dto\" />
     </ItemGroup>
 
 </Project>

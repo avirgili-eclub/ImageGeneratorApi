@@ -9,5 +9,5 @@ public class ProjectDto
     [MaxLength(120)]
     public required string Description { get; set; }
     public string? UserId { get; set; }
-    public ICollection<ImageDto> Images { get; } = new List<ImageDto>();
+    public ICollection<ImagenDto> Images { get; } = new List<ImagenDto>();
 }

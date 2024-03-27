@@ -17,5 +17,5 @@ public class Project : BaseEntity
     public required string UserId { get; set; }
     [ForeignKey("Id")]
     public User User { get; set; }
-    public ICollection<Image> Images { get; } = new List<Image>();
+    public ICollection<Imagen> Images { get; } = new List<Imagen>();
 }

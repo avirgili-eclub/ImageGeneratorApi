@@ -10,17 +10,63 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4335dec5-5fca-4a4a-a9e5-6aff2e2725b3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/Project/Services/ProjectService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Dto/ImageDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Dto/ProjectDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Services/IImageService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi/Controllers/ProjectController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/Image/Services/Pictures.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/StableDiffusion/Config/IImageGenerationConfigStorage.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/StableDiffusion/Config/ImageGenerationConfig.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/StableDiffusion/Config/StableConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/StableDiffusion/Enums/ImageGenerationType.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/StableDiffusion/Exception/ImageGenerationException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/StableDiffusion/Extensions/ArraySegmentExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/StableDiffusion/Extensions/DateTimeExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/StableDiffusion/Extensions/ImageExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/StableDiffusion/Extensions/SocketMessageComponentGenerationContext.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/StableDiffusion/Extensions/SocketUserMessageExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/StableDiffusion/Extensions/StreamExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/StableDiffusion/Interfaces/IImageAnalyser.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/StableDiffusion/Interfaces/IImageGenerator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/StableDiffusion/Interfaces/IImageGeneratorBannedWords.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/StableDiffusion/Interfaces/IImageOutpainter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/StableDiffusion/Interfaces/IImageUpscaler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/StableDiffusion/Record/Prompt.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/StableDiffusion/Services/Automatic1111.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/StableDiffusion/Services/Contexts/BaseImageGenerationContext.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/StableDiffusion/Services/Contexts/MidjourneyStyleImageGenerationButtons.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/StableDiffusion/Services/Contexts/MuteCommandContext.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/StableDiffusion/Services/Contexts/MuteCommandContextGenerationContext.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/StableDiffusion/Services/DatabaseImageGenerationStorage.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/StableDiffusion/Services/HardcodedBannedWords.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/StableDiffusion/Services/ImageGenerationConfigRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/StableDiffusion/Services/Outpaint/AutofocusTwoStepOutpainter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/StableDiffusion/Services/StableDiffusionBackendCache.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/StableDiffusion/Utilities/AsyncLock.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/StableDiffusion/Utilities/FuzzyParsing.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/StableDiffusion/Utilities/MuteInteractionModuleBase.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Common/Interfaces/ImageGenerationConfigRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Infrastructure/Data/Interfaces/IKeyValueStorage.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Infrastructure/Data/Services/IDatabaseServiceExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneratorApi.Infrastructure/Persistence/SimpleJsonBlobTable.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ImageGeneratorApi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ImageGeneratorApi/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi.Core/ConfigureService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/ConfigureService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi.Core/Image/Interfaces/ImageRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/Image/Interfaces/ImageRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi.Core/Image/Services/ImageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/Image/Services/ProjectImageService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageGeneratorApi.Core/ImageGeneratorApi.Core.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/ImageGeneratorApi.Core.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi.Core/Project/Repository/ProjectRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi.Core/Project/Repository/ProjectRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Interfaces/IProjectRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Interfaces/IProjectRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Services/IProjectService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Services/IProjectService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Images/Dto/ImageDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Images/Dto/ImagenDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Images/Entities/Image.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Images/Entities/Imagen.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Images/Mappers/ImageMapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Images/Mappers/ImageMapper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Images/Repository/IImageRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Images/Repository/IImageRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Images/Services/IImageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Images/Services/IProjectImageService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Project/Dto/ProjectDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Project/Dto/ProjectDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Project/Entities/Project.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi.Domain/Project/Entities/Project.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi.Infrastructure/Data/Interfaces/IApplicationDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi.Infrastructure/Data/Interfaces/IApplicationDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi.Infrastructure/ImageGeneratorApi.Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi.Infrastructure/ImageGeneratorApi.Infrastructure.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi.Infrastructure/Persistence/ApplicationDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi.Infrastructure/Persistence/ApplicationDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi/Controllers/ImageController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi/Controllers/ImageController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi/ImageGeneratorAI.db" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi/ImageGeneratorAI.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi/ImageGeneratorAI.db-shm" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi/ImageGeneratorAI.db-shm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi/ImageGeneratorAI.db-wal" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi/ImageGeneratorAI.db-wal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageGeneratorApi/ImageGeneratorApi.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi/ImageGeneratorApi.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageGeneratorApi/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneratorApi/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,20 +77,29 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/88ec3bc3f37e76fbcc932a25f9f0c1c29fe2b343/src/DefaultBuilder/src/WebApplicationBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/88ec3bc3f37e76fbcc932a25f9f0c1c29fe2b343/src/Identity/Extensions.Core/src/UserManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/88ec3bc3f37e76fbcc932a25f9f0c1c29fe2b343/src/Identity/Extensions.Stores/src/IdentityUser.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/88ec3bc3f37e76fbcc932a25f9f0c1c29fe2b343/src/Security/Authentication/Core/src/AuthenticationServiceCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/9f4b1f5d664afdfc80e1508ab7ed099dff210fbd/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/List.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/9f4b1f5d664afdfc80e1508ab7ed099dff210fbd/src/libraries/System.Private.CoreLib/src/System/Reflection/MethodBaseInvoker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4d7007b5f7724a9ab88e5ad45341b079d8600/ea/16914ac1/SocketMessageComponent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9bab108b5efa4a968fdc6547ba34533f2b6b0/f3/2589c6e7/IUserStore`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6f16bb308cc0bad68d8e57f92553be9787ee797f73cef8ddad13fbb165982/Size.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/90aaebe26988d7a6e65cb1ea258c29d54a6a419d724771759de682c364623c9e/ResizeExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c8e8b4221b3e6285b11533e6eac1d3942d51ec9f40f23250156a7f4d51e6d62c/SwaggerGenOptionsExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ImageGeneratorApi.Core/Application/Mappings/MappingProfile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ImageGeneratorApi.Core/Image/Interfaces/ImageRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ImageGeneratorApi.Core/Project/Repository/ProjectRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ImageGeneratorApi.Domain/Common/Interfaces/IBaseRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ImageGeneratorApi.Domain/Common/Interfaces/IBaseService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/ImageGeneratorApi.Domain/Interfaces/IImageRepository.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/ImageGeneratorApi.Domain/Services/IProjectService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ImageGeneratorApi.Infrastructure/Data/Services/BaseService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ImageGeneratorApi/Controllers/LoginController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ImageGeneratorApi/Controllers/ProjectController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ImageGeneratorApi/Program.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="Toolset" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -59,7 +114,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    ".NET Launch Settings Profile.ImageGeneratorApi: http.executor": "Run",
+    ".NET Launch Settings Profile.ImageGeneratorApi: http.executor": "Debug",
+    "5008e86a-92df-4fd2-8891-f23d4b4eac24.executor": "Debug",
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -139,7 +195,14 @@
       <option name="presentableId" value="Default" />
       <updated>1710208697050</updated>
       <workItem from="1710208698328" duration="6777000" />
-      <workItem from="1710277217031" duration="23238000" />
+      <workItem from="1710277217031" duration="24602000" />
+      <workItem from="1710503854533" duration="20723000" />
+      <workItem from="1710701233581" duration="4362000" />
+      <workItem from="1711114073565" duration="6445000" />
+      <workItem from="1711248709723" duration="4362000" />
+      <workItem from="1711323383634" duration="5002000" />
+      <workItem from="1711404030878" duration="15416000" />
+      <workItem from="1711495254997" duration="8680000" />
     </task>
     <servers />
   </component>
@@ -171,13 +234,279 @@
           <line>47</line>
           <properties documentPath="C:\repo\ImageGeneratorApi\ImageGeneratorApi.Infrastructure\Persistence\IdentityDbSeed.cs" initialLine="47" containingFunctionPresentation="Method 'InitializeDatabase'">
             <startOffsets>
-              <option value="1785" />
+              <option value="1792" />
             </startOffsets>
             <endOffsets>
-              <option value="1828" />
+              <option value="1835" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ImageGeneratorApi/Controllers/LoginController.cs</url>
+          <line>62</line>
+          <properties documentPath="C:\repo\ImageGeneratorApi\ImageGeneratorApi\Controllers\LoginController.cs" initialLine="61" containingFunctionPresentation="Method 'GenerateJwtToken'">
+            <startOffsets>
+              <option value="1944" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1993" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ImageGeneratorApi/Controllers/LoginController.cs</url>
+          <line>48</line>
+          <properties documentPath="C:\repo\ImageGeneratorApi\ImageGeneratorApi\Controllers\LoginController.cs" initialLine="49" containingFunctionPresentation="Method 'Login'">
+            <startOffsets>
+              <option value="1599" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1624" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ImageGeneratorApi.Core/Image/Services/ProjectImageService.cs</url>
+          <line>41</line>
+          <properties documentPath="C:\repo\ImageGeneratorApi\ImageGeneratorApi.Core\Image\Services\ImageService.cs" initialLine="41" containingFunctionPresentation="Method 'DtoToEntity'">
+            <startOffsets>
+              <option value="2429" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2659" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ImageGeneratorApi/Controllers/ImageController.cs</url>
+          <line>38</line>
+          <properties documentPath="C:\repo\ImageGeneratorApi\ImageGeneratorApi\Controllers\ImageController.cs" initialLine="37" containingFunctionPresentation="Method 'Create'">
+            <startOffsets>
+              <option value="1510" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1808" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ImageGeneratorApi.Test/Services/ProjectServiceTest.cs</url>
+          <line>11</line>
+          <properties documentPath="C:\repo\ImageGeneratorApi\ImageGeneratorApi.Test\Services\ProjectService.cs" initialLine="12" containingFunctionPresentation="Constructor 'ProjectService'" />
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ImageGeneratorApi.Test/Services/ProjectServiceTest.cs</url>
+          <line>12</line>
+          <properties documentPath="C:\repo\ImageGeneratorApi\ImageGeneratorApi.Test\Services\ProjectServiceTest.cs" initialLine="16" containingFunctionPresentation="Method 'GetStableDifusionModels'">
+            <startOffsets>
+              <option value="287" />
+            </startOffsets>
+            <endOffsets>
+              <option value="335" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ImageGeneratorApi.Core/Image/Services/ProjectImageService.cs</url>
+          <line>57</line>
+          <properties documentPath="C:\repo\ImageGeneratorApi\ImageGeneratorApi.Core\Image\Services\ImageService.cs" initialLine="56" containingFunctionPresentation="Method 'CreateImages'">
+            <startOffsets>
+              <option value="2825" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2873" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ImageGeneratorApi.Core/Image/Services/ProjectImageService.cs</url>
+          <line>67</line>
+          <properties documentPath="C:\repo\ImageGeneratorApi\ImageGeneratorApi.Core\Image\Services\ImageService.cs" initialLine="66" containingFunctionPresentation="Method 'CreateImages'">
+            <startOffsets>
+              <option value="4857" />
+            </startOffsets>
+            <endOffsets>
+              <option value="4917" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ImageGeneratorApi.Core/StableDiffusion/Services/Contexts/BaseImageGenerationContext.cs</url>
+          <line>171</line>
+          <properties documentPath="C:\repo\ImageGeneratorApi\ImageGeneratorApi.Core\StableDiffusion\Services\Contexts\BaseImageGenerationContext.cs" initialLine="172" containingFunctionPresentation="Method 'GenerateText2Image'">
+            <startOffsets>
+              <option value="5930" />
+            </startOffsets>
+            <endOffsets>
+              <option value="5931" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ImageGeneratorApi.Core/StableDiffusion/Services/Automatic1111.cs</url>
+          <line>69</line>
+          <properties documentPath="C:\repo\ImageGeneratorApi\ImageGeneratorApi.Core\StableDiffusion\Services\Automatic1111.cs" initialLine="69" containingFunctionPresentation="Method 'Text2Image'">
+            <startOffsets>
+              <option value="2863" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2922" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ImageGeneratorApi.Core/StableDiffusion/Services/StableDiffusionBackendCache.cs</url>
+          <line>39</line>
+          <properties documentPath="C:\repo\ImageGeneratorApi\ImageGeneratorApi.Core\StableDiffusion\Services\StableDiffusionBackendCache.cs" initialLine="39" containingFunctionPresentation="Method 'GetBackend'">
+            <startOffsets>
+              <option value="1445" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1446" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ImageGeneratorApi.Core/StableDiffusion/Services/StableDiffusionBackendCache.cs</url>
+          <line>52</line>
+          <properties documentPath="C:\repo\ImageGeneratorApi\ImageGeneratorApi.Core\StableDiffusion\Services\StableDiffusionBackendCache.cs" initialLine="52" containingFunctionPresentation="Method 'GetBackend'">
+            <startOffsets>
+              <option value="2257" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2258" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ImageGeneratorApi.Core/StableDiffusion/Services/StableDiffusionBackendCache.cs</url>
+          <line>72</line>
+          <properties documentPath="C:\repo\ImageGeneratorApi\ImageGeneratorApi.Core\StableDiffusion\Services\StableDiffusionBackendCache.cs" initialLine="72" containingFunctionPresentation="Method 'GetBackend'">
+            <startOffsets>
+              <option value="2889" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2917" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ImageGeneratorApi.Core/StableDiffusion/Services/StableDiffusionBackendCache.cs</url>
+          <line>111</line>
+          <properties documentPath="C:\repo\ImageGeneratorApi\ImageGeneratorApi.Core\StableDiffusion\Services\StableDiffusionBackendCache.cs" initialLine="111" containingFunctionPresentation="Constructor 'BackendStatus'">
+            <startOffsets>
+              <option value="4125" />
+            </startOffsets>
+            <endOffsets>
+              <option value="4126" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ImageGeneratorApi.Core/StableDiffusion/Services/StableDiffusionBackendCache.cs</url>
+          <line>28</line>
+          <properties documentPath="C:\repo\ImageGeneratorApi\ImageGeneratorApi.Core\StableDiffusion\Services\StableDiffusionBackendCache.cs" initialLine="28" containingFunctionPresentation="Constructor 'StableDiffusionBackendCache'">
+            <startOffsets>
+              <option value="1057" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1340" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ImageGeneratorApi.Core/StableDiffusion/Services/StableDiffusionBackendCache.cs</url>
+          <line>22</line>
+          <properties documentPath="C:\repo\ImageGeneratorApi\ImageGeneratorApi.Core\StableDiffusion\Services\StableDiffusionBackendCache.cs" initialLine="22" containingFunctionPresentation="Constructor 'StableDiffusionBackendCache'">
+            <startOffsets>
+              <option value="811" />
+            </startOffsets>
+            <endOffsets>
+              <option value="832" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ImageGeneratorApi.Core/StableDiffusion/Services/Contexts/BaseImageGenerationContext.cs</url>
+          <line>86</line>
+          <properties documentPath="C:\repo\ImageGeneratorApi\ImageGeneratorApi.Core\StableDiffusion\Services\Contexts\BaseImageGenerationContext.cs" initialLine="87" containingFunctionPresentation="Method 'OnCompleted'">
+            <startOffsets>
+              <option value="2626" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2627" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ImageGeneratorApi.Core/StableDiffusion/Services/StableDiffusionBackendCache.cs</url>
+          <line>17</line>
+          <properties documentPath="C:\repo\ImageGeneratorApi\ImageGeneratorApi.Core\StableDiffusion\Services\StableDiffusionBackendCache.cs" initialLine="17" containingFunctionPresentation="Constructor 'StableDiffusionBackendCache'">
+            <startOffsets>
+              <option value="498" />
+            </startOffsets>
+            <endOffsets>
+              <option value="570" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ImageGeneratorApi.Infrastructure/Persistence/ApplicationDbContext.cs</url>
+          <line>54</line>
+          <properties documentPath="C:\repo\ImageGeneratorApi\ImageGeneratorApi.Infrastructure\Persistence\ApplicationDbContext.cs" initialLine="54" containingFunctionPresentation="Method 'CreateCommand'">
+            <startOffsets>
+              <option value="1963" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1964" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ImageGeneratorApi/Program.cs</url>
+          <line>137</line>
+          <properties documentPath="C:\repo\ImageGeneratorApi\ImageGeneratorApi\Program.cs" initialLine="131" containingFunctionPresentation="">
+            <startOffsets>
+              <option value="4544" />
+            </startOffsets>
+            <endOffsets>
+              <option value="4571" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ImageGeneratorApi/Program.cs</url>
+          <line>129</line>
+          <properties documentPath="C:\repo\ImageGeneratorApi\ImageGeneratorApi\Program.cs" initialLine="129" containingFunctionPresentation="">
+            <startOffsets>
+              <option value="4287" />
+            </startOffsets>
+            <endOffsets>
+              <option value="4288" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="43" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

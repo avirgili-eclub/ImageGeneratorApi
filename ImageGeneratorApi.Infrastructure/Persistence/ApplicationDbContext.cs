@@ -1,3 +1,6 @@
+using System.Data;
+using System.Data.Common;
+using System.Data.SQLite;
 using System.Security.Claims;
 using ImageGeneratorApi.Domain.Common;
 using ImageGeneratorApi.Domain.Common.Entities;
@@ -15,12 +18,14 @@ public class ApplicationDbContext : IdentityDbContext<User>, IApplicationDbConte
 {
     private readonly IDateTime _dateTime;
     private readonly ICurrentUserService _currentUserService;
+    private readonly IDbConnection _connection;
 
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options,
         IDateTime dateTime,
         //TODO: is deprecated
         IHttpContextAccessor httpContextAccessor, ICurrentUserService currentUserService) : base(options)
     {
+        _connection = Database.GetDbConnection();
         _dateTime = dateTime;
         _currentUserService = currentUserService;
     }
@@ -39,13 +44,25 @@ public class ApplicationDbContext : IdentityDbContext<User>, IApplicationDbConte
     }
 
     public DbSet<Project> Projects { get; set; } 
-    public DbSet<Image> Images { get; set; }
+    public DbSet<Imagen> Images { get; set; }
 
     public DbSet<T> Set<T>() where T : class
     {
         return Set<T>();
     }
-    
+
+    public DbCommand CreateCommand()
+    {
+        if (_connection is Microsoft.Data.Sqlite.SqliteConnection sqliteConnection)
+        {
+            return sqliteConnection.CreateCommand();
+        }
+        else
+        {
+            throw new InvalidOperationException("The database connection is not of type SQLiteConnection.");
+        }
+    }
+
     public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
     {
         //TODO: Fix this.

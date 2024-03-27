@@ -5,10 +5,10 @@ using ImageGeneratorApi.Domain.Images.Enums;
 
 namespace ImageGeneratorApi.Domain.Images.Entities;
 
-public class Image : BaseEntity
+public class Imagen : BaseEntity
 {
     [Key]
-    public int ImageId { get; private set; }
+    public int ImagenId { get; private set; }
     [MaxLength(100)]
     public required string Name { get; set; }
     [MaxLength(160)]

@@ -3,7 +3,7 @@ using ImageGeneratorApi.Domain.Images.Entities;
 
 namespace ImageGeneratorApi.Domain.Images.Repository;
 
-public interface IImageRepository : IBaseRepository<Image>
+public interface IImageRepository : IBaseRepository<Imagen>
 {
-    IQueryable<Image> GetAllByProjectId(int id);
+    IQueryable<Imagen> GetAllByProjectId(int id);
 }

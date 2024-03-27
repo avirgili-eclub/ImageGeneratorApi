@@ -1,5 +1,6 @@
 using System.Text;
 using ImageGeneratorApi.Core;
+using ImageGeneratorApi.Core.StableDiffusion.Services;
 using ImageGeneratorApi.Domain.Common.Entities;
 using ImageGeneratorApi.Infrastructure.Clients;
 using ImageGeneratorApi.Infrastructure.Data.Interfaces;
@@ -123,6 +124,16 @@ builder.Services.AddCors(options =>
 #endregion
 
 var app = builder.Build();
+
+// Instantiate DatabaseImageGenerationStorage
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+    // Now you can use dbContext within this scope
+    var imageGenerationStorage = new DatabaseImageGenerationStorage(dbContext);
+    // Use imageGenerationStorage
+}
+
 
 app.MapIdentityApi<User>();
 

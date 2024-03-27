@@ -3,7 +3,7 @@ using ImageGeneratorApi.Domain.Images.Enums;
 
 namespace ImageGeneratorApi.Domain.Images.Dto;
 
-public class ImageDto
+public class ImagenDto
 {
     [MaxLength(100)]
     [Required]

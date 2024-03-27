@@ -11,34 +11,34 @@ namespace ImageGeneratorApi.Controllers;
 [ApiController]
 public class ImageController : ControllerBase
 {
-    private readonly IImageService _imageService;
+    private readonly IProjectImageService _projectImageService;
 
-    public ImageController(IImageService imageService)
+    public ImageController(IProjectImageService projectImageService)
     {
-        _imageService = imageService;
+        _projectImageService = projectImageService;
     }
 
     [HttpGet("{projectId}")]
     [SwaggerOperation(Summary = "Get all Images by Project Id", Description = "Retrieve all Images from Project.")]
-    [SwaggerResponse(200, "Success", typeof(IEnumerable<Image>))]
+    [SwaggerResponse(200, "Success", typeof(IEnumerable<Imagen>))]
     [SwaggerResponse(400, "Bad Request", typeof(string))]
     [SwaggerResponse(500, "Internal Server Error", typeof(string))]
     public IActionResult GetAllByProjectId(int projectId)
     {
-        var response = _imageService.GetAllByProjectId(projectId);
+        var response = _projectImageService.GetAllByProjectId(projectId);
         return Ok(response);
     }
 
     [HttpPost("{projectId}")]
     [SwaggerOperation(Summary = "Create Image", Description = "Create Image.")]
-    [SwaggerResponse(200, "Success", typeof(IEnumerable<Image>))]
+    [SwaggerResponse(200, "Success", typeof(IEnumerable<Imagen>))]
     [SwaggerResponse(400, "Bad Request", typeof(string))]
     [SwaggerResponse(500, "Internal Server Error", typeof(string))]
-    public IActionResult Create(int projectId, [FromBody] ImageDto imageRequest)
+    public IActionResult Create(int projectId, [FromBody] ImagenDto imagenRequest)
     {
-        if (imageRequest == null || string.IsNullOrEmpty(imageRequest.Name)
-                                 || string.IsNullOrEmpty(imageRequest.Description)
-                                 || string.IsNullOrEmpty(imageRequest.ImageType.ToString())
+        if (imagenRequest == null || string.IsNullOrEmpty(imagenRequest.Name)
+                                 || string.IsNullOrEmpty(imagenRequest.Description)
+                                 || string.IsNullOrEmpty(imagenRequest.ImageType.ToString())
                                  || projectId == 0)
         {
             return BadRequest("Invalid image");
@@ -46,7 +46,7 @@ public class ImageController : ControllerBase
 
         try
         {
-           var imageResponse = _imageService.CreateImages(imageRequest, projectId);
+           var imageResponse = _projectImageService.CreateImages(imagenRequest, projectId);
            return Ok(imageResponse);
         }
         catch (Exception e)
